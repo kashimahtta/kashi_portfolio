@@ -33,7 +33,7 @@ export default function Hero() {
       <div className="container-x relative">
         <p className="label reveal">Hey, I'm Kashi — Developer, Builder &amp; Problem Solver</p>
         <h1 className="reveal mt-5 max-w-3xl font-display text-6xl font-bold leading-[0.95] sm:text-7xl lg:text-8xl">
-          Meet Your <span className="text-ember">Dev Partner.</span>
+          Ideas In.<br /><span className="text-ember">Impact Out.</span>
         </h1>
         <div className="mt-8 grid items-start gap-10 lg:grid-cols-[1.2fr_1fr]">
           <div className="reveal">
