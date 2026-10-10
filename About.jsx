@@ -1,14 +1,42 @@
+import { useEffect, useState } from 'react';
 import { approach } from './content.js';
 
+const photos = [
+  { src: '/aboutme1.jpeg', alt: 'Kashi by a lakeside' },
+  { src: '/aboutme2.jpeg', alt: 'Kashi smiling in a shop' },
+  { src: '/aboutme3.jpeg', alt: 'Kashi taking a mirror selfie' },
+];
+
 export default function About() {
+  const [activePhoto, setActivePhoto] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActivePhoto((current) => (current + 1) % photos.length);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="about" className="bg-cream py-24">
       <div className="container-x grid gap-12 lg:grid-cols-[1fr_1.4fr]">
-        {/* Portrait slot: put portrait.jpg in /public and replace this block with <img src="/portrait.jpg" alt="Kashi Mahtta" /> */}
-        <div className="reveal relative min-h-[320px] rounded-2xl bg-sand p-8 lg:-rotate-2">
-          <p className="label">About</p>
-          <p className="mt-6 font-display text-7xl font-bold leading-none text-ember/90" aria-hidden="true">KM</p>
-          <p className="mt-6 font-hand text-4xl">Always building. Always learning.</p>
+        <div
+          className="reveal relative aspect-[4/5] min-h-[320px] overflow-hidden rounded-2xl bg-sand shadow-lg lg:-rotate-2"
+          role="group"
+          aria-label="Photo carousel"
+        >
+          {photos.map((photo, index) => (
+            <img
+              key={photo.src}
+              src={photo.src}
+              alt={photo.alt}
+              aria-hidden={index !== activePhoto}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ease-in-out ${
+                index === activePhoto ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          ))}
         </div>
         <div className="reveal">
           <h2 className="font-display text-4xl font-bold leading-tight md:text-5xl">A little about the person behind the pixels.</h2>
