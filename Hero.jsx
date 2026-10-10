@@ -21,18 +21,18 @@ function Terminal({ text }) {
 export default function Hero() {
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden bg-char pb-12 pt-24 text-cream">
-      <div
+      <img
+        src="/portrait.png"
+        alt=""
         aria-hidden="true"
-        className="absolute inset-0 bg-cover bg-right bg-no-repeat"
-        style={{
-          backgroundImage: "linear-gradient(90deg, rgba(32,32,30,0.98) 0%, rgba(32,32,30,0.9) 48%, rgba(32,32,30,0.56) 100%), url('/portrait.png')",
-        }}
+        className="absolute -top-[3%] right-0 h-[106%] w-full object-cover object-center opacity-70 lg:w-[58%] lg:object-[center_35%]"
       />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-char via-char/85 to-char/35 lg:via-char/65 lg:to-char/25" />
       <div aria-hidden="true" className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'linear-gradient(#F7F1E7 1px,transparent 1px),linear-gradient(90deg,#F7F1E7 1px,transparent 1px)', backgroundSize: '48px 48px' }} />
-      <div aria-hidden="true" className="absolute -right-32 top-10 h-[28rem] w-[28rem] rounded-full bg-ember/30 blur-3xl" />
+      <div aria-hidden="true" className="absolute -left-32 top-10 h-[28rem] w-[28rem] rounded-full bg-ember/15 blur-3xl" />
       <div className="container-x relative">
         <p className="label reveal">Hey, I'm Kashi — Developer, Builder &amp; Problem Solver</p>
-        <h1 className="reveal mt-5 max-w-4xl font-display text-6xl font-bold leading-[0.95] sm:text-7xl lg:text-8xl">
+        <h1 className="reveal mt-5 max-w-3xl font-display text-6xl font-bold leading-[0.95] sm:text-7xl lg:text-8xl">
           Meet Your <span className="text-ember">Dev Partner.</span>
         </h1>
         <div className="mt-8 grid items-start gap-10 lg:grid-cols-[1.2fr_1fr]">

@@ -3,7 +3,9 @@ export const profile = {
   name: 'Kashi Mahtta',
   email: 'kashimahtta@gmail.com',
   github: 'https://github.com/kashimahtta',
-  linkedin: '', // ← paste your verified LinkedIn URL here; the link appears automatically
+  instagram: '',
+  linkedin: '',
+  whatsapp: '',
   location: 'Ghaziabad, Uttar Pradesh, India',
 };
 
