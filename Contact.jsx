@@ -18,7 +18,7 @@ export default function Contact() {
         <p className="label">~/contact</p>
         <h2 className="reveal mt-3 font-display text-5xl font-bold leading-none md:text-8xl">Got an idea?<br /><span className="text-ember">Let's build it.</span></h2>
         <p className="mt-6 max-w-2xl text-lg text-sand">Whether you're a recruiter, a founder, a fellow developer, or someone with an interesting problem to solve, I'm always interested in meaningful conversations and opportunities to create something useful.</p>
-        <div className="mt-12 grid gap-12 lg:grid-cols-2">
+        <div className="mt-12 grid items-start gap-12 lg:grid-cols-[0.9fr_1.15fr_0.8fr]">
           <ul className="space-y-4 font-mono">
             <li><span className="text-sand">Email · </span><a className="text-ember hover:underline" href={`mailto:${profile.email}`}>{profile.email}</a></li>
             <li><span className="text-sand">GitHub · </span><a className="text-ember hover:underline" href={profile.github} target="_blank" rel="noopener noreferrer">github.com/kashimahtta ↗</a></li>
@@ -31,6 +31,11 @@ export default function Contact() {
             <button type="submit" className="btn-primary">Send Message →</button>
             <p className="font-mono text-xs text-sand">Heads up: this opens your email app with the message pre-filled — nothing is sent from this site.</p>
           </form>
+          <img
+            src="/contact.png"
+            alt="Kashi Mahtta"
+            className="mx-auto aspect-[4/5] w-full max-w-sm rounded-2xl border border-cream/15 object-cover object-center lg:mx-0 lg:max-w-none"
+          />
         </div>
         <p className="mt-16 font-hand text-3xl text-ember">Built with curiosity. Powered by code. Always becoming better.</p>
       </div>
