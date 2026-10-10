@@ -12,7 +12,7 @@ Requires Node 18+.
 ## Update content
 Everything (text, skills, experience, projects, links) is in `content.js`.
 - Add LinkedIn: set `profile.linkedin`.
-- Add Instagram and WhatsApp: set `profile.instagram` and `profile.whatsapp` to your profile/chat URLs.
+- Contact buttons use the phone and social URLs in `profile` in `content.js`.
 - Add verified project links: add `github:` / `live:` to a project (buttons only render when present).
 - Hero background: replace `public/portrait.png` with your portrait image.
 - About carousel: replace `public/aboutme1.jpeg`, `public/aboutme2.jpeg`, and `public/aboutme3.jpeg` with your photos.

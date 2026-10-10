@@ -2,10 +2,12 @@
 export const profile = {
   name: 'Kashi Mahtta',
   email: 'kashimahtta@gmail.com',
+  phone: '+91 7060144444',
   github: 'https://github.com/kashimahtta',
-  instagram: '',
-  linkedin: '',
-  whatsapp: '',
+  instagram: 'https://www.instagram.com/mahtta_kashi?dlrf=YTNuYjJ1em9mZjU1',
+  linkedin: 'https://www.linkedin.com/in/kashi-mahtta-179436307',
+  whatsapp: 'https://wa.me/917060144444',
+  snapchat: 'https://www.snapchat.com/add/kashimahtta0201?share_id=rSotkfvSk-s&locale=en-GB',
   location: 'Ghaziabad, Uttar Pradesh, India',
 };
 

@@ -2,11 +2,17 @@ import { profile } from './content.js';
 
 export default function Contact() {
   const links = [
-    ['Instagram', profile.instagram],
-    ['LinkedIn', profile.linkedin],
-    ['GitHub', profile.github],
-    ['WhatsApp', profile.whatsapp],
-  ].filter(([, url]) => url);
+    {
+      label: `Phone · ${profile.phone}`,
+      url: `tel:${profile.phone.replace(/\s/g, '')}`,
+      external: false,
+    },
+    { label: 'Instagram', url: profile.instagram },
+    { label: 'LinkedIn', url: profile.linkedin },
+    { label: 'GitHub', url: profile.github },
+    { label: 'WhatsApp', url: profile.whatsapp },
+    { label: 'Snapchat', url: profile.snapchat },
+  ].filter(({ url }) => url);
 
   return (
     <section
@@ -20,10 +26,10 @@ export default function Contact() {
         <div className="mt-12">
           <h3 className="label mb-4">Connect with me</h3>
           <ul className="grid gap-3 font-mono sm:grid-cols-2 lg:grid-cols-4">
-            {links.map(([label, url]) => (
+            {links.map(({ label, url, external = true }) => (
               <li key={label}>
-                <a className="block rounded-lg border border-cream/20 bg-char/40 px-4 py-3 transition hover:border-ember hover:text-ember" href={url} target="_blank" rel="noopener noreferrer">
-                  {label} <span className="text-sand">↗</span>
+                <a className="block rounded-lg border border-cream/20 bg-char/40 px-4 py-3 transition hover:border-ember hover:text-ember" href={url} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>
+                  {label} {external && <span className="text-sand">↗</span>}
                 </a>
               </li>
             ))}
