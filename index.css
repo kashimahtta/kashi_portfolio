@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+body { @apply bg-cream text-char font-sans antialiased overflow-x-hidden; }
+:focus-visible { outline: 2px solid #C85A32; outline-offset: 3px; }
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-6xl px-5 md:px-8; }
+  .label { @apply font-mono text-xs tracking-widest uppercase text-ember; }
+  .btn { @apply inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium transition duration-200 hover:-translate-y-0.5; }
+  .btn-primary { @apply btn bg-ember text-cream hover:bg-[#b04a26]; }
+  .btn-ghost { @apply btn border border-current; }
+  .chip {
+    @apply rounded-full border border-current px-3 py-1 font-mono text-xs;
+    border-color: color-mix(in srgb, currentColor 30%, transparent);
+  }
+}
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+@keyframes pulseDot { 0%,100% { opacity: 1 } 50% { opacity: .35 } }
+@keyframes blink { 50% { opacity: 0 } }
+.float { animation: float 6s ease-in-out infinite; }
+.pulse-dot { animation: pulseDot 2s infinite; }
+.caret { animation: blink 1s steps(1) infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .float, .pulse-dot, .caret { animation: none; }
+  * { transition-duration: .01ms !important; }
+}
